@@ -1,0 +1,102 @@
+jahid@DESKTOP-IHKGQ9I MINGW64 ~
+$ chmod 400 jahid_key_ubuntu.pem
+
+jahid@DESKTOP-IHKGQ9I MINGW64 ~
+$ ssh -i "jahid_key_ubuntu.pem" ubuntu@ec2-3-89-8-50.compute-1.amazonaws.com
+The authenticity of host 'ec2-3-89-8-50.compute-1.amazonaws.com (3.89.8.50)' can't be established.
+ECDSA key fingerprint is SHA256:J3p85Bp7w6LKNmTVYE5DZPrXXeQFFO2sHINVVOuiSBM.
+Are you sure you want to continue connecting (yes/no/[fingerprint])? yes
+Warning: Permanently added 'ec2-3-89-8-50.compute-1.amazonaws.com,3.89.8.50' (ECDSA) to the list of known hosts.
+Welcome to Ubuntu 18.04.3 LTS (GNU/Linux 4.15.0-1051-aws x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/advantage
+
+  System information as of Thu Oct 24 23:43:51 UTC 2019
+
+  System load:  0.0               Processes:           86
+  Usage of /:   17.3% of 7.69GB   Users logged in:     0
+  Memory usage: 15%               IP address for eth0: 172.31.91.231
+  Swap usage:   0%
+
+ * Kata Containers are now fully integrated in Charmed Kubernetes 1.16!
+   Yes, charms take the Krazy out of K8s Kata Kluster Konstruction.
+
+     https://ubuntu.com/kubernetes/docs/release-notes
+
+27 packages can be updated.
+16 updates are security updates.
+
+
+Last login: Thu Oct 24 03:06:48 2019 from 24.192.130.70
+To run a command as administrator (user "root"), use "sudo <command>".
+See "man sudo_root" for details.
+
+ubuntu@ip-172-31-91-231:~$ hostname
+ip-172-31-91-231
+ubuntu@ip-172-31-91-231:~$ sudo hostnamectl set-hostname "jahid-russel.club"
+ubuntu@ip-172-31-91-231:~$ /bin/bash
+ubuntu@jahid-russel:~$ hostname
+jahid-russel.club
+ubuntu@jahid-russel:~$ cat /etc/hosts
+127.0.0.1 localhost
+
+# The following lines are desirable for IPv6 capable hosts
+::1 ip6-localhost ip6-loopback
+fe00::0 ip6-localnet
+ff00::0 ip6-mcastprefix
+ff02::1 ip6-allnodes
+ff02::2 ip6-allrouters
+ff02::3 ip6-allhosts
+ubuntu@jahid-russel:~$ ipconfig
+
+Command 'ipconfig' not found, did you mean:
+
+  command 'iwconfig' from deb wireless-tools
+  command 'iconfig' from deb ipmiutil
+  command 'ifconfig' from deb net-tools
+
+Try: sudo apt install <deb name>
+
+ubuntu@jahid-russel:~$ ifconfig
+eth0: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 9001
+        inet 172.31.91.231  netmask 255.255.240.0  broadcast 172.31.95.255
+        inet6 fe80::10f3:66ff:fe22:e38  prefixlen 64  scopeid 0x20<link>
+        ether 12:f3:66:22:0e:38  txqueuelen 1000  (Ethernet)
+        RX packets 41400  bytes 59139155 (59.1 MB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 3040  bytes 277485 (277.4 KB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+lo: flags=73<UP,LOOPBACK,RUNNING>  mtu 65536
+        inet 127.0.0.1  netmask 255.0.0.0
+        inet6 ::1  prefixlen 128  scopeid 0x10<host>
+        loop  txqueuelen 1000  (Local Loopback)
+        RX packets 154  bytes 12986 (12.9 KB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 154  bytes 12986 (12.9 KB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+ubuntu@jahid-russel:~$ 172.31.91.231 jahid-russel.club
+172.31.91.231: command not found
+ubuntu@jahid-russel:~$ # 172.31.91.231 jahid-russel.club
+ubuntu@jahid-russel:~$ # sudo vi/ect/hosts
+ubuntu@jahid-russel:~$ # sudo vi/etc/hosts
+ubuntu@jahid-russel:~$ sudo su
+root@jahid-russel:/home/ubuntu# echo 172.31.91.231 jahid-russel.club >> /etc/hosts
+root@jahid-russel:/home/ubuntu# cat /etc/hosts
+127.0.0.1 localhost
+
+# The following lines are desirable for IPv6 capable hosts
+::1 ip6-localhost ip6-loopback
+fe00::0 ip6-localnet
+ff00::0 ip6-mcastprefix
+ff02::1 ip6-allnodes
+ff02::2 ip6-allrouters
+ff02::3 ip6-allhosts
+172.31.91.231 jahid-russel.club
+root@jahid-russel:/home/ubuntu# pwd
+/home/ubuntu
+root@jahid-russel:/home/ubuntu# ^C
+root@jahid-russel:/home/ubuntu#
