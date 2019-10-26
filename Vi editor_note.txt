@@ -1,0 +1,10 @@
+# Open file= vi filename
+i.e.  sudo vi /etc/environment
+
+#To edit= i
+#escape edit mode= esc
+#undo change= u
+#open a new line=o
+#delete= dd
+Save and Escape=  Shift+zz
+

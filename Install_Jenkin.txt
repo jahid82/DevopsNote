@@ -1,0 +1,45 @@
+#### https://linuxize.com/post/how-to-install-jenkins-on-ubuntu-18-04/
+
+ls -lrt /etc/apt/sources.list
+
+ubuntu@ci:/etc/apt/sources.list.d$ wget -q -O - https://pkg.jenkins.io/debian/jenkins-ci.org.key | sudo apt-key add -
+OK
+ubuntu@ci:/etc/apt/sources.list.d$ sudo sh -c 'echo deb http://pkg.jenkins.io/debian-stable binary/ > /etc/apt/sources.list.d/jenkins.list'
+ubuntu@ci:/etc/apt/sources.list.d$ 
+ubuntu@ci:/etc/apt/sources.list.d$ ls -lrt
+total 4
+-rw-r--r-- 1 root root 48 Oct 25 02:52 jenkins.list
+ubuntu@ci:/etc/apt/sources.list.d$ cat jenkins.list 
+deb http://pkg.jenkins.io/debian-stable binary/
+ubuntu@ci:/etc/apt/sources.list.d$ sudo apt-get update
+
+
+
+	<distributionManagement>
+		<repository>
+			<id>central</id>
+			<name>releases</name>
+			<url>http://54.226.166.54:8081/artifactory/libs-release-local/</url>
+		</repository>
+		<snapshotRepository>
+			<id>snapshot</id>
+			<name>snapshots</name>
+			<url>http://54.226.166.54:8081/artifactory/libs-snapshot-local/</url>
+		</snapshotRepository>
+	</distributionManagement>
+
+----------How To access jenkin after installation-------
+copy IPv4 Public IP from aws console and type like below in the blowser:
+
+3.82.160.138:8080
+
+------------!!!---Must have to change Security setting--------
+security group>>>In bound>>>Edit>>>Add rule>>>Custom TCP (Port Range 8080)>>>
+
+then, paste the following comand in the console to get password for unlock:
+
+sudo cat /var/lib/jenkins/secrets/initialAdminPassword
+-------------------------------Jenkin--------
+Manage Jenkins>>>Configure Tool>>>Global Tool Configuration>>>give java and Maven home path
+Manage Jenkins>>>Plugging Manager>>>>Conditional Buildsetup & Environment injector & Deploy to container Plugin & Git Parameter
+

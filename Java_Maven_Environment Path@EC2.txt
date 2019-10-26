@@ -1,0 +1,34 @@
+-----befor install any software-----
+sudo apt update 
+sudo apt list --upgradable
+
+------Utility install--------
+
+sudo apt install curl wget unzip elinks
+
+-------java/Maven installation----(https://docs.oracle.com/cd/E19182-01/820-7851/inst_cli_jdk_javahome_t/)
+sudo apt install openjdk-8-jdk
+Sudo apt install maven
+
+cp -pv /etc/environment /etc/environment_KK (backup)
+
+vi /etc/environment
+
+
+# JAVA HOME PATH SETUP
+JAVA_HOME="/usr/lib/jvm/java-8-openjdk-amd64/"
+
+# MAVEN HOME PATH SETUP
+MAVEN_HOME=/usr/share/maven
+M2=$MAVEN_HOME/bin
+
+(Compile)
+source /etc/environment
+
+(to check maven)
+echo $MAVEN_HOME
+
+
+
+(To compile)
+source /etc/environment
